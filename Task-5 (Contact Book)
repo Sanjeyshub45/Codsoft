@@ -1,0 +1,43 @@
+contacts = {}
+
+def add_contact():
+    name = input("enter namee: ").strip()
+    phone = input("enter phone number:. ").strip()
+    contacts[name] = phone
+    print("cotact added!")
+def view_contacts():
+    if not contacts:
+        print(" noo contacts availale.")
+    else:
+        for name, phone in contacts.items():
+            print(f"{name} - {phone}")
+def search_contact():
+    query = input("enter name or phone  search: ").strip()
+    for name, phone in contacts.items():
+        if query.lower() in name.lower() or query == phone:
+            print(f"Found: {name} - {phone}")
+            return
+    print("Contact not found.")
+def delete_contact():
+    name = input("enter the name to delete: ").strip()
+    if name in contacts:
+        del contacts[name]
+        print("contact deleted!")
+    else:
+        print("contact not found.")
+while True:
+    print("\n1. add Contact\n2. view Contacts\n3. Search Contact\n4. delete Contact\n5. exit")
+    choice = input("neter an option: ").strip()
+    if choice == "1":
+        add_contact()
+    elif choice == "2":
+        view_contacts()
+    elif choice == "3":
+        search_contact()
+    elif choice == "4":
+        delete_contact()
+    elif choice == "5":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice.")
