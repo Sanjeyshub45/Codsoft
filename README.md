@@ -9,11 +9,6 @@ Welcome to the repository for my internship projects at **CodSoft**! This reposi
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
 - [Project List](#project-list)
-- [Setup Instructions](#setup-instructions)
-- [Features](#features)
-- [Acknowledgments](#acknowledgments)
-
----
 
 ## Introduction
 
@@ -24,27 +19,16 @@ During my internship at CodSoft, I worked on several projects that highlight var
 ## Technologies Used
 
 - **Programming Language**: Python 3.x
-- **Libraries/Frameworks**:
-  - Pandas
-  - NumPy
-  - Flask/Django
-  - Matplotlib/Seaborn
-  - Requests
-  - BeautifulSoup/Scrapy (for web scraping)
-  - TensorFlow/PyTorch (if applicable to ML projects)
-
----
-
+- **Libraries/Frameworks**:random
+ 
 ## Project List
 
 Here are the key projects completed during the internship:
 
 1. TO-DO LIST
  
-
 2. CALCULATOR
  
-
 3. PASSWORD GENERATOR
 
 4. Rock-Paper-Scissors Game
