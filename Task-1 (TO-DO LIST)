@@ -1,118 +1,59 @@
-import sys
-
-# A dictionary to store tasks
 tasks = {}
 
-def show_menu():
-    """
-    Displays the menu options for the To-Do List application.
-    """
-    print("\n--- To-Do List Application ---")
-    print("1. View Tasks")
-    print("2. Add Task")
-    print("3. Update Task")
-    print("4. Delete Task")
-    print("5. Mark Task as Complete")
-    print("6. Exit")
-
 def view_tasks():
-    """
-    Displays the list of tasks with their status.
-    """
     if not tasks:
-        print("\nNo tasks available. Add some tasks to get started!")
+        print("No tasks available!")
     else:
-        print("\nYour Tasks:")
-        for task_id, task_info in tasks.items():
-            status = "✓ Completed" if task_info['completed'] else "✗ Pending"
-            print(f"ID: {task_id} | Task: {task_info['description']} | Status: {status}")
+        for task_id, task in tasks.items():
+            status = "✓" if task["completed"] else "✗"
+            print(f"{task_id}. {task['description']} [{status}]")
 
-def add_task():
-    """
-    Adds a new task to the list.
-    """
-    description = input("\nEnter task description: ").strip()
+  def add_task():
+    description = input("Enter task description: ").strip()
     if description:
         task_id = len(tasks) + 1
         tasks[task_id] = {"description": description, "completed": False}
-        print(f"Task '{description}' added with ID: {task_id}")
-    else:
-        print("Task description cannot be empty.")
+        print("Task added!")
 
 def update_task():
-    """
-    Updates the description of an existing task.
-    """
     view_tasks()
-    try:
-        task_id = int(input("\nEnter the task ID to update: "))
-        if task_id in tasks:
-            new_description = input("Enter the new task description: ").strip()
-            if new_description:
-                tasks[task_id]["description"] = new_description
-                print(f"Task ID {task_id} updated successfully!")
-            else:
-                print("Task description cannot be empty.")
-        else:
-            print("Invalid Task ID.")
-    except ValueError:
-        print("Please enter a valid numeric Task ID.")
+    task_id = int(input("Enter task ID to update: "))
+    if task_id in tasks:
+        new_description = input("Enter new description: ").strip()
+        tasks[task_id]["description"] = new_description
+        print("Task updated!")
 
 def delete_task():
-    """
-    Deletes a task from the list.
-    """
     view_tasks()
-    try:
-        task_id = int(input("\nEnter the task ID to delete: "))
-        if task_id in tasks:
-            deleted_task = tasks.pop(task_id)
-            print(f"Task '{deleted_task['description']}' deleted successfully!")
-        else:
-            print("Invalid Task ID.")
-    except ValueError:
-        print("Please enter a valid numeric Task ID.")
+    task_id = int(input("Enter task ID to delete: "))
+    if task_id in tasks:
+        tasks.pop(task_id)
+        print("Task deleted!")
 
-def mark_task_complete():
-    """
-    Marks a task as completed.
-    """
+def mark_complete():
     view_tasks()
-    try:
-        task_id = int(input("\nEnter the task ID to mark as complete: "))
-        if task_id in tasks:
-            tasks[task_id]["completed"] = True
-            print(f"Task ID {task_id} marked as complete!")
-        else:
-            print("Invalid Task ID.")
-    except ValueError:
-        print("Please enter a valid numeric Task ID.")
+    task_id = int(input("Enter task ID to mark as complete: "))
+    if task_id in tasks:
+        tasks[task_id]["completed"] = True
+        print("Task marked as complete!")
 
-def main():
-    """
-    The main function to run the To-Do List application.
-    """
-    while True:
-        show_menu()
-        try:
-            choice = int(input("\nEnter your choice: "))
-            if choice == 1:
-                view_tasks()
-            elif choice == 2:
-                add_task()
-            elif choice == 3:
-                update_task()
-            elif choice == 4:
-                delete_task()
-            elif choice == 5:
-                mark_task_complete()
-            elif choice == 6:
-                print("Exiting the application. Goodbye!")
-                sys.exit(0)
-            else:
-                print("Invalid choice. Please select a valid option.")
-        except ValueError:
-            print("Please enter a valid numeric choice.")
+while True:
+    print("\n1. View Tasks\n2. add Task\n3. Update Task\n4. Delete Task\n5. Mark Complete\n6. Exit")
 
-if __name__ == "__main__":
-    main()
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        view_tasks()
+    elif choice == "2" :
+        add_task()
+    elif choice == "3" :
+        update_task()
+    elif choice == "4":
+        delete_task()
+    elif choice == "5":
+        mark_complete()
+    elif choice == "6":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid option!")
