@@ -39,30 +39,14 @@ During my internship at CodSoft, I worked on several projects that highlight var
 
 Here are the key projects completed during the internship:
 
-1. **[Project 1: Title]**
-   - **Description**: A brief overview of the project, its goals, and the problem it solves.
-   - **Skills Applied**: List of Python skills or tools used.
-   - **Folder**: `projects/project1`
+1. TO-DO LIST
+ 
 
-2. **[Project 2: Title]**
-   - **Description**: A brief overview of the project, its goals, and the problem it solves.
-   - **Skills Applied**: List of Python skills or tools used.
-   - **Folder**: `projects/project2`
+2. CALCULATOR
+ 
 
-3. **[Project 3: Title]**
-   - **Description**: A brief overview of the project, its goals, and the problem it solves.
-   - **Skills Applied**: List of Python skills or tools used.
-   - **Folder**: `projects/project3`
+3. PASSWORD GENERATOR
 
-> Each project folder contains its own README file with detailed explanations, code usage instructions, and outputs.
+4. Rock-Paper-Scissors Game
 
----
-
-## Setup Instructions
-
-To run these projects on your local machine:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/codsoft-internship-projects.git
-   cd codsoft-internship-projects
+5. Contact Book
